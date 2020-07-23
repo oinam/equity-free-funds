@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Equity Free Funds
+title: Equity Free Funds for Startups
 email: oinam@oinam.com
 description: >- # this means to ignore newlines until "baseurl:"
   Funds, initiatives, helping Startups without asking for an equity in return..
