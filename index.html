@@ -1,0 +1,92 @@
+---
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>{{ site.title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css" media="screen">
+
+:root {
+  --font-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+  --font-size: 1rem;
+  --text-line-height: 1.6;
+
+  --border-radius: 3px;
+
+  --bg-1: #eee;
+  --bg-2: #fafafa;
+  --bg-3: #aaa;
+}
+
+html,
+body {
+  font-family: var(--font-sans-serif);
+}
+
+body {
+  margin: 1em auto;
+
+  width: 96%;
+  max-width: 760px;
+  background: var(--bg-2);
+  font-size: var(--font-size);
+  line-height: var(--text-line-height);
+}
+
+li {
+  margin-top: 1rem;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1 class="title">{{ site.title }}</h1>
+
+<p>
+  A list of funds targeting early Startups, helping them with cash without asking for any equity.
+  <br>
+  <small>
+    If you wish to contribute, add/edit, to the list, please look at the <a href="">Source</a> on Github.
+    Contact <a href="https://brajeshwar.com/">Brajeshwar</a> for anything else.
+  </small>
+</p>
+
+<hr>
+
+<ol>
+  {% assign sortedFunds = site.data.funds | sort: 'name' %}
+  {% for fund in sortedFunds %}
+  <li>
+    <strong><a href="http://{{ fund.website_link }}" target="_blank">{{ fund.name }}</a></strong>,
+    {{ fund.location }}
+    <mark>{{ fund.funding }}</mark>
+    <br>
+    {{ fund.about }}
+  </li>
+  {% endfor %}
+</ol>
+
+<hr>
+
+<footer>
+  <p>
+    <small>
+      This is from an open-source <a href="https://github.com/vinay20045/equity-free-funding-stash">data</a> feeding into <a href="https://yourfirstinvestor.com">Your First Investor</a>. I was not comfortable with the sluggish User Interface. I just wanted to see a list and clickable link to the funds.
+    </small>
+  </p>
+</footer>
+
+</body>
+</html>
